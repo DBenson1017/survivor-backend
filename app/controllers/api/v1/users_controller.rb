@@ -3,7 +3,6 @@ class Api::V1::UsersController < ApplicationController
 
     def create 
         @user = User.create(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], password: params[:password], email: params[:email], zip: params[:zip])
-    
         if @user.valid?
             @token = encode_token(user_id: @user.id)
             render json: {user: UserSerializer.new(@user),
@@ -24,8 +23,7 @@ class Api::V1::UsersController < ApplicationController
     end 
 
     private 
-    def user_params 
-   
+    def user_params
         params.require(:user).permit(:username, :password, :first_name, :last_name, :email, :zip)
     end
 end
