@@ -6,7 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'rest-client'
+
+User.destroy_all()
+Location.destroy_all
 
 cat = User.create(username: 'cathjime', first_name: 'cat', last_name: 'jimenez', email: 'test@gmail.com', zip: '07093', password: 'passw0rd')
 
+ziptest = Location.create(zip: 11215)
+
+>>>>>>> 0ebf6355b32c66f247c92557eac14f928cf64ca7
