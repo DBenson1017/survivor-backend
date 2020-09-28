@@ -1,0 +1,2 @@
+class SuperfundController < ApplicationController
+end
