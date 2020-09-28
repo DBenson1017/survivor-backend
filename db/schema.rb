@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_09_28_145317) do
+=======
+ActiveRecord::Schema.define(version: 2020_09_28_184747) do
+>>>>>>> c617b2e6625d2fa5b6672f56abc8f90e6b5a0ed4
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "airs", force: :cascade do |t|
+    t.string "air_quality"
+    t.string "quality_code"
+    t.string "quality_index"
+    t.string "city"
+    t.string "state"
+    t.bigint "location_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_airs_on_location_id"
+  end
 
   create_table "locations", force: :cascade do |t|
     t.integer "zip"
@@ -44,4 +60,5 @@ ActiveRecord::Schema.define(version: 2020_09_28_145317) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  # add_foreign_key "airs", "locations"
 end
