@@ -48,3 +48,5 @@ gem "jwt", "~> 2.2"
 
 gem "faker", "~> 2.14"
 gem 'faraday'
+
+gem 'rest-client'
