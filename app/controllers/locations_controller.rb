@@ -13,7 +13,7 @@ class LocationsController < ApplicationController
         else 
             render json: { error: 'failed to create location'}, status: :not_acceptable 
         end 
-        # add another method in model to run SF search by location zip 
+       Location.generateAir(@location.id, @location.zip)
     end 
 
     private 
