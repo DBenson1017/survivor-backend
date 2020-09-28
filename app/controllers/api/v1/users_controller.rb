@@ -22,6 +22,10 @@ class Api::V1::UsersController < ApplicationController
         render json: @user
     end 
 
+    def profile 
+        render json: {user: current_user}, status: :accepted
+    end 
+
     private 
     def user_params
         params.require(:user).permit(:username, :password, :first_name, :last_name, :email, :zip)

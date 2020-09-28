@@ -9,6 +9,7 @@ class LocationsController < ApplicationController
     
     def create
         @location = Location.create(params[:zip])
+        
         # add another method in model to run SF search by location zip 
     end 
 
