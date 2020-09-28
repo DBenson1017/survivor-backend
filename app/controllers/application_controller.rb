@@ -3,8 +3,8 @@ class ApplicationController < ActionController::API
     before_action :authorized
     # dont forget to hid secret into an ENV variable 
 
-    def encode_token(payload)
-        JWT.encode(payload, 'my_s3cr3t')
+    def encode_token(payload) 
+        JWT.encode(payload, 'my_s3cr3t' )
     end 
 
     def auth_header
