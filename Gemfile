@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+# env file for secret API keys
+gem 'dotenv-rails', :groups => [:development, :test]
 #  Convention over configuation to Json generation 
 gem 'active_model_serializers', '~> 0.10.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
