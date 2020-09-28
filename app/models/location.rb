@@ -9,8 +9,7 @@ require 'ostruct'
 class Location < ApplicationRecord
     has_many :airs
 
-
-    def self.generateAir(id, zip)
+    def self.generateAirCard(id, zip)
         response = Unirest.get "https://us-air-quality-by-zip-code.p.rapidapi.com/getairqualityzipcode?zip=#{zip}",
         headers:{
           "X-RapidAPI-Host" => "us-air-quality-by-zip-code.p.rapidapi.com",
@@ -24,13 +23,6 @@ class Location < ApplicationRecord
         quality= data['AirQuality']
 
         Air.create(air_quality: quality, quality_code: code, quality_index: index, city: city, state: state, location_id: id)
-        
-
-        
-
     end
 
-
-
-    
 end

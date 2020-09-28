@@ -13,7 +13,8 @@ class LocationsController < ApplicationController
         else 
             render json: { error: 'failed to create location'}, status: :not_acceptable 
         end 
-       Location.generateAir(@location.id, @location.zip)
+       Location.generateAirCard(@location.id, @location.zip)
+       
     end 
 
     private 
