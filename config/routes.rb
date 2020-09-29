@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   resources :airs
   resources :locations
+  resources :superfunds
   namespace :api do 
     namespace :v1 do 
       resources :users
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+      get '/superfunds', to: 'superfund#index'
+      post '/superfunds', to: 'superfund#create'
       end 
     end 
   end

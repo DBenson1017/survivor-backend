@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 2020_09_29_003214) do
     t.string "state"
   end
 
+  create_table "superfunds", force: :cascade do |t|
+    t.bigint "location_id"
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.integer "zipcode"
+    t.string "state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["location_id"], name: "index_superfunds_on_location_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"

@@ -28,8 +28,7 @@ class LocationsController < ApplicationController
         end 
         # create air quality info 
        Location.generateAirCard(@location.id, @location.zip)
-       # create superfund info
-
+       Location.generateSuperfundCard(@location.id, @location.zip)
 
     end 
 
