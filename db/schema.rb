@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_09_28_145317) do
-=======
 ActiveRecord::Schema.define(version: 2020_09_28_184747) do
->>>>>>> c617b2e6625d2fa5b6672f56abc8f90e6b5a0ed4
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,5 +56,5 @@ ActiveRecord::Schema.define(version: 2020_09_28_184747) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  # add_foreign_key "airs", "locations"
+  add_foreign_key "airs", "locations"
 end
