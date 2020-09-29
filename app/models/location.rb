@@ -20,8 +20,8 @@ class Location < ApplicationRecord
         code= data['AirQualityCode']
         quality= data['AirQuality']
         # byebug
-        air = Air.create(air_quality: quality, quality_code: code, quality_index: index, city: city, state: state, location_id: id)
-        puts air 
+        @air = Air.create(air_quality: quality, quality_code: code, quality_index: index, city: city, state: state, location_id: id)
+        puts @air
     end
 
     def self.generateSuperfundCard(id, zip)  
@@ -33,7 +33,8 @@ class Location < ApplicationRecord
       # byebug
       
       superfund_data.each do |s|
-        Superfund.create(location_id: id, name:s["SITE_NAME"], address:s["SITE_STRT_ADRS1"], city:s["SITE_CITY_NAME"], zipcode: s["SITE_ZIP_CODE"], state:s["RSTATE_CODE"])
+        @superfund = Superfund.create(location_id: id, name:s["SITE_NAME"], address:s["SITE_STRT_ADRS1"], city:s["SITE_CITY_NAME"], zipcode: s["SITE_ZIP_CODE"], state:s["RSTATE_CODE"])
+        puts @superfund 
       end 
 
     end 
