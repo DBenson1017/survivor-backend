@@ -6,7 +6,7 @@ class Superfund < ApplicationRecord
     #zip and string interpolate zip
     #get info and return resp
 
-    def apiResp(zip)
+def self.generate(id, zip)
   
 response_url = Faraday.get("https://enviro.epa.gov/enviro/efservice/cer_site/site_zip_code/06062/JSON/rows/1:19")
 superfund_response = RestClient.get(response_url)

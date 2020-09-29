@@ -27,9 +27,8 @@ class LocationsController < ApplicationController
             render json: { error: 'failed to create location'}, status: :not_acceptable 
         end 
         # create air quality info 
-       Location.generateAirCard(@location.id, @location.zip)
-       # create superfund info
-
+    #    Location.generateAirCard(@location.id, @location.zip)
+       Location.generateSuperfundCard()
 
     end 
 
