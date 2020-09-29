@@ -30,7 +30,7 @@ class Location < ApplicationRecord
     response = Unirest.get "https://climate-score.p.rapidapi.com/40.6499541/-73.8512693",
     headers:{
       "X-RapidAPI-Host" => "climate-score.p.rapidapi.com",
-      "X-RapidAPI-Key" => "daab7205b6msh337f11b766ca16fp1b9fd9jsn1c4df39e00bc"
+      "X-RapidAPI-Key" => ENV['LOCATION_KEY']
     }
   # puts response 
   end
