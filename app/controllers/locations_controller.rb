@@ -7,6 +7,8 @@ class LocationsController < ApplicationController
     end 
 
     def create
+        Location.buildLocation(params[:zip])
+
         @location = Location.create(zip: params[:zip])
         if @location.valid?
             render json: {location: @location}, status: :created
