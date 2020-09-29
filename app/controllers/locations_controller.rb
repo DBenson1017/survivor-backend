@@ -7,9 +7,21 @@ class LocationsController < ApplicationController
     end 
 
     def create
-        Location.buildLocation(params[:zip])
+        zip = params[:zip]
+        response = Unirest.get "https://anywhichway-postal-codes.p.rapidapi.com/US/#{zip}",
+        headers:{
+        "X-RapidAPI-Host" => "anywhichway-postal-codes.p.rapidapi.com",
+        "X-RapidAPI-Key" => ENV['LOCATION_KEY']
+        }
+        lat = response.body['lat']
+        lon = response.body['lon']
+        city= response.body['placeName']
+        state = response.body['state']
+        @location = Location.create(zip: zip, lon: lon, lat: lat, city: city, state: state)
 
-        @location = Location.create(zip: params[:zip])
+    #     Location.buildLocation(params[:zip])
+
+    #     @location = Location.create(zip: params[:zip])
         if @location.valid?
             render json: {location: @location}, status: :created
         else 
