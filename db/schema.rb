@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_195543) do
+ActiveRecord::Schema.define(version: 2020_09_29_230921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 2020_09_29_195543) do
     t.string "state"
   end
 
+  create_table "locations_users", force: :cascade do |t|
+    t.bigint "location_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["location_id"], name: "index_locations_users_on_location_id"
+    t.index ["user_id"], name: "index_locations_users_on_user_id"
+  end
+
   create_table "superfunds", force: :cascade do |t|
     t.bigint "location_id"
     t.string "name"
@@ -61,4 +68,6 @@ ActiveRecord::Schema.define(version: 2020_09_29_195543) do
   end
 
   add_foreign_key "airs", "locations"
+  add_foreign_key "locations_users", "locations"
+  add_foreign_key "locations_users", "users"
 end
