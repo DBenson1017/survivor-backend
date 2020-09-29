@@ -22,7 +22,7 @@ response_url = "https://enviro.epa.gov/enviro/efservice/cer_site/site_zip_code/0
 superfund_response = RestClient.get(response_url)
 superfund_data = JSON.parse(superfund_response) #["results"]
 
-# puts superfund_data
+
 # byebug
 # "something"
     
