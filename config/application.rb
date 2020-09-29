@@ -12,7 +12,10 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
-require 'dotenv/load'
+require "dotenv/load"
+require "rest-client"
+require "JSON"
+require "byebug"
 
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
