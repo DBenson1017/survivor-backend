@@ -1,7 +1,10 @@
 class Api::V1::SuperfundController < ApplicationController
 
+    skip_before_action :authorized, only: [:create, :index]
+
     def index
         @superfunds = Superfund.all
+        render json: @superfunds
     end 
 
     def create

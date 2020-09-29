@@ -2,14 +2,6 @@ require 'rest-client'
 require 'JSON'
 require 'byebug'
 
-
-
-# require 'unirest'
-# require 'dotenv'
-# require 'dotenv/load'
-
-
-
 class Location < ApplicationRecord
     has_many :airs
     has_many :superfunds    
