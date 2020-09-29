@@ -15,6 +15,7 @@ class Location < ApplicationRecord
           "X-RapidAPI-Host" => "us-air-quality-by-zip-code.p.rapidapi.com",
           "X-RapidAPI-Key"=> ENV['AIR_QUALITY']
         }
+        # byebug
         data = JSON.parse(response.raw_body) 
         city= data['City']
         state= data['State']
@@ -25,19 +26,8 @@ class Location < ApplicationRecord
         Air.create(air_quality: quality, quality_code: code, quality_index: index, city: city, state: state, location_id: id)
     end
 
-  def self.generateClimateCard()
+    # def self.generateSuperfund(id, zip)
 
-    response = Unirest.get "https://climate-score.p.rapidapi.com/40.6499541/-73.8512693",
-    headers:{
-      "X-RapidAPI-Host" => "climate-score.p.rapidapi.com",
-      "X-RapidAPI-Key" => ENV['LOCATION_KEY']
-    }
-  # puts response 
-  end
-
-  def self.generateWorldBankData()
-    response = Unirest.get "http://climatedataapi.worldbank.org/climateweb/rest/v1/country/mavg/pr/2020/2039/USA"
-
-  end 
+    # end 
 
 end # end of class

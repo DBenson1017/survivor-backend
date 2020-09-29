@@ -17,18 +17,20 @@ class LocationsController < ApplicationController
         lon = response.body['lon']
         city= response.body['placeName']
         state = response.body['state']
+        # create location instance 
         @location = Location.create(zip: zip, lon: lon, lat: lat, city: city, state: state)
+        # byebug
 
-    #     Location.buildLocation(params[:zip])
-
-    #     @location = Location.create(zip: params[:zip])
         if @location.valid?
             render json: {location: @location}, status: :created
         else 
             render json: { error: 'failed to create location'}, status: :not_acceptable 
         end 
+        # create air quality info 
        Location.generateAirCard(@location.id, @location.zip)
-       
+       # create superfund info
+
+
     end 
 
     private 
