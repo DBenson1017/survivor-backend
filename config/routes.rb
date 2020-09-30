@@ -8,8 +8,8 @@ Rails.application.routes.draw do
       resources :users
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
-      get '/superfunds', to: 'superfund#index'
-      post '/superfunds', to: 'superfund#create'
+      get '/superfunds', to: 'superfunds#index'
+      post '/superfunds', to: 'superfunds#create'
       end 
     end 
   end

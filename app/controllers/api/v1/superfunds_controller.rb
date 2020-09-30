@@ -1,4 +1,4 @@
-class Api::V1::SuperfundController < ApplicationController
+class Api::V1::SuperfundsController < ApplicationController
 
     skip_before_action :authorized, only: [:create, :index]
 
