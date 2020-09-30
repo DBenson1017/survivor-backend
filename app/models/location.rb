@@ -4,7 +4,9 @@ require 'byebug'
 
 class Location < ApplicationRecord
     has_many :airs
-    has_many :superfunds    
+    has_many :superfunds  
+    has_many :favorites
+    has_many :users, through: :favorites
     
     def self.generateAirCard(id, zip)
         response = Unirest.get "https://us-air-quality-by-zip-code.p.rapidapi.com/getairqualityzipcode?zip=#{zip}",
