@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :airs
   resources :locations
   resources :superfund
+  resources :favorites
   namespace :api do 
     namespace :v1 do 
       resources :users
