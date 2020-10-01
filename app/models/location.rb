@@ -43,7 +43,7 @@ class Location < ApplicationRecord
           
           test = Superfund.create(location_id: id, name: name, address: address, city: city, zipcode: zipcode, state: state)
         end 
-        byebug
+       
       
     end 
 
