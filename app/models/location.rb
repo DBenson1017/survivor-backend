@@ -39,6 +39,7 @@ class Location < ApplicationRecord
         puts @superfund 
       end 
 
+
     end 
 
   end # end of class
@@ -64,5 +65,10 @@ class Location < ApplicationRecord
       # response = Faraday.get("https://enviro.epa.gov/enviro/efservice/cer_site/site_zip_code/06062/JSON/rows/1:19")
       # superfund_response = RestClient.get(response)
       # superfund_data = JSON.parse(response)
+
+    
+
+    # def self.generateSuperfund(id, zip)
+
 
 
