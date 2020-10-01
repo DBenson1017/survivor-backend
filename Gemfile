@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+gem 'fast_jsonapi'
 gem 'figaro'
 # env file for secret API keys
 gem 'dotenv-rails', :groups => [:development, :test]
