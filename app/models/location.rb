@@ -43,13 +43,8 @@ class Location < ApplicationRecord
           
           test = Superfund.create(location_id: id, name: name, address: address, city: city, zipcode: zipcode, state: state)
         end 
-        byebug
+       
       
-
-      # response = Faraday.get "https://enviro.epa.gov/enviro/efservice/cer_site/site_zip_code/43017/JSON/rows/1:19"
-      # response = Faraday.get("https://enviro.epa.gov/enviro/efservice/cer_site/site_zip_code/06062/JSON/rows/1:19")
-      # superfund_response = RestClient.get(response)
-      # superfund_data = JSON.parse(response)
     end 
 
     # def self.generateSuperfund(id, zip)
